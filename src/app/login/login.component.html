@@ -1,0 +1,54 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid d-flex justify-content-center">
+            <a class="navbar-brand" href="#">
+                <span class="logo mr-1">USC </span> {{title}}
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div>
+    <mat-card class="bg-white">
+        <mat-card-content>
+            <form [formGroup]="frm">
+                <h2>Log In</h2>
+                <mat-form-field class="full-width-input">
+                    <mat-label>Userid</mat-label>
+                    <input matInput placeholder="username" formControlName="userid" required>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="password" formControlName="password" required>
+                </mat-form-field>
+                <button type="button" mat-raised-button color="primary" class="btn btn-primary mr-1" routerLink="/main/menu">Login</button>
+                <button type="button" mat-raised-button color="primary" (click)="openSetup()">Setup</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+<ng-template #SetupAPI let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Setup</h5>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]='setupform'>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="Server Name" formControlName="url" required>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="HT-ID" formControlName="htid" required>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="User Location" formControlName="location" required>
+            </mat-form-field>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" mat-raised-button (click)="modal.close()" class="btn btn-outline-primary mr-2">Back</button>
+        <button type="button" mat-raised-button class="btn btn-danger" (click)="modal.close()">Save</button>
+    </div>
+</ng-template>

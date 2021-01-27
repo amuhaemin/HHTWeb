@@ -1,0 +1,69 @@
+<div>
+    <mat-card>
+        <mat-card-title class="text-center">
+            <h2>Stock Taking</h2>
+        </mat-card-title>
+        <form class="form-inline">
+            <div class="input-group mb-1">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+                    #d="ngbDatepicker">
+                <div class="input-group-append">
+                    <button mat-flat-button color="primary" (click)="d.toggle()" type="button">
+                        <mat-icon>event</mat-icon>
+                    </button>
+                </div>
+                
+                <!-- <mat-form-field>
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> -->
+            </div>
+        </form>
+        
+        <div class="input-group mb-1">
+            <input type="text" class="form-control" placeholder="Plant Code">
+            <div class="input-group-append">
+                <button mat-flat-button color="accent" type="button">Scan</button>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Place Code">
+            <div class="input-group-append">
+                <button mat-flat-button color="accent" type="button">Scan</button>
+            </div>
+        </div>
+        <mat-card-content class="mat-elevation-z8">
+            <div>
+                <table mat-table class="table">
+                    <thead>
+                        <tr>
+                            <th mat-header-cell scope="col">
+                                Packing No
+                            </th>
+                            <th mat-header-cell scope="col">
+                                Plant Code
+                            </th>
+                            <th mat-header-cell scope="col">
+                                Place Code
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td mat-cell>Ini diisi nomor Packing</td>
+                            <td mat-cell>Ini diisi PlantCode</td>
+                            <td mat-cell>Ini diisi PlaceCode</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+
+        </mat-card-content>
+        <div class="mx-auto text-center">
+            <button mat-raised-button class="btn-primary" type="button">Scan</button>
+        </div>
+    </mat-card>
+</div>
